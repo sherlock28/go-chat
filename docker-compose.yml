@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:11.16-alpine
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - ./postgres/postgres.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: always
+    ports:
+      - 8080:80
+    env_file:
+      - ./pgadmin/pgadmin.env
+    volumes:
+      - pgadmindata:/var/lib/pgadmin
+
+volumes:
+  pgdata:
+  pgadmindata:

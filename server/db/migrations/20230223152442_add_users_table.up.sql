@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS "chat".users (
+   "id" BIGSERIAL PRIMARY KEY,
+   "username" VARCHAR(30) NOT NULL,
+   "email" VARCHAR(120) NOT NULL,
+   "password" VARCHAR(500) NOT NULL,
+   "created_at" timestamp WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
