@@ -1,3 +1,5 @@
+App:
+  port: 5000
 Database:
   host: localhost
   port: 5432

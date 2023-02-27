@@ -6,6 +6,10 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+type App struct {
+	Port int `yaml:"port"`
+}
+
 type Database struct {
 	Host     string `yaml:"host"`
 	Port     int    `yaml:"port"`
@@ -16,7 +20,8 @@ type Database struct {
 }
 
 type Configuration struct {
-	DB Database `yaml:"Database"`
+	App App      `yaml:"App"`
+	DB  Database `yaml:"Database"`
 }
 
 const defaultPath string = "config.yml"
