@@ -4,7 +4,9 @@ import (
 	"context"
 	"server/config"
 	"server/db"
+	"server/server"
 
+	"github.com/gin-gonic/gin"
 	"go.uber.org/fx"
 )
 
@@ -15,8 +17,9 @@ func main() {
 			context.Background,
 			config.LoadConf,
 			db.NewDatabase,
+			server.NewHttpServer,
 		),
-		fx.Invoke(func(*db.Database) {}),
+		fx.Invoke(func(*gin.Engine) {}),
 	)
 
 	app.Run()
