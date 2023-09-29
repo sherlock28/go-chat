@@ -21,3 +21,17 @@
   ```
   migrate -database "postgres://user:password@localhost:5432/database?sslmode=disable" -path db/migrations up
   ```
+
+## References
+
+- SQL Library
+
+  https://pkg.go.dev/database/sql
+
+- PostgreSQL Driver
+
+  https://github.com/lib/pq
+
+- golang-migrate Library
+
+  https://github.com/golang-migrate/migrate
